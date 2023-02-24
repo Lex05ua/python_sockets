@@ -8,7 +8,6 @@ port = 8000
 # create a socket object
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# bind the socket to a specific host and port
 server.bind((host, port))
 
 # listen for incoming connections
@@ -16,7 +15,7 @@ server.listen(1)
 
 while True:
     # wait for a client to connect
-    print('Waiting for a client to connect...')
+    print('Waiting for a client...')
     conn, addr = server.accept()
     print(f"Connection from {addr}, {conn}")
 
@@ -31,7 +30,7 @@ while True:
         
         print(f"Received message from client: {data}")
 
-        # send a response back to the client
+        # send a response to the client
         response = input("Enter response: ")
         conn.sendall(response.encode())
 
