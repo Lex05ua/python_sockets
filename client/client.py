@@ -20,5 +20,4 @@ while True:
     response = client.recv(1024).decode()
     print(f"Received message from server: {response}")
 
-# close the socket
 sock.close()
